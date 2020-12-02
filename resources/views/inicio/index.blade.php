@@ -66,7 +66,7 @@
                         <div className="card-body">
                             <h3 className="card-title">{{ Str::title( $catalogo[0]->nombre_catalogo ) }}</h3>
 
-                            <a href="#"
+                            <a href="{{ route('catalogo.show', ['catalogo' => $catalogo[0]->id ])}}"
                                 className="btn btn-primary d-block">Ver
                             </a>
                         </div>

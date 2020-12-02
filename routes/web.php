@@ -22,9 +22,12 @@ Route::get('/catalogos/create', [App\Http\Controllers\CatalogoController::class,
 Route::get('/catalogos/listar', [App\Http\Controllers\CatalogoController::class, 'getCatalogos']);
 Route::get('/catalogos/show', [App\Http\Controllers\CatalogoController::class, 'show']);
 Route::post('/catalogos/post', [App\Http\Controllers\CatalogoController::class, 'store']);
-Route::put('/catalogos/eliminar', [App\Http\Controllers\CatalogoController::class, 'desactivar']);
+Route::put('/catalogos/eliminar', [App\Http\Controllers\CatalogoController::class, 'update']);
 
-Route::get('/producto/search', [App\Http\Controllers\InicioController::class, 'search'] )->name('buscar.show');
+Route::get('/catalogos/{catalogo}', [App\Http\Controllers\CatalogoController::class, 'ver'] )->name('catalogo.show');
+
+
+Route::get('/producto/search', [App\Http\Controllers\CatalogoController::class, 'search'] )->name('buscar.show');
 
 
 

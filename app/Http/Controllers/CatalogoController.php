@@ -17,6 +17,12 @@ class CatalogoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show', 'search', 'ver']]);
+    }
+
     public function index()
     {
 
@@ -108,6 +114,18 @@ class CatalogoController extends Controller
         return ['catalogos' => $catalogos];        
     }
 
+    public function ver(Catalogo $catalogo)
+    {
+
+        $catalogo = Catalogo::with('productos.categoria')
+                        ->where('id', '=', $catalogo->id)
+                        ->get();
+        // Obtener si el usuario actual le gusta la receta y esta autenticado
+
+
+        return view('catalogos.ver', compact('catalogo'));       
+    }
+
     public function search(Request $request)
     {
         $busqueda = $request->get('buscar');
@@ -139,8 +157,12 @@ class CatalogoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function desactivar(Request $request)
+    public function update(Request $request, Catalogo $catalogo)
     {
+
+        $this->authorize('update', $catalogo);
+
+
         $catalogo = Catalogo::findOrfail($request->id);
         $catalogo->estado_catalogo = '0';
         $catalogo->save();
