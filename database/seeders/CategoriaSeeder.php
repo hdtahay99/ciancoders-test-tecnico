@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Categoria;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoriaSeeder extends Seeder
 {
@@ -15,30 +16,26 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
 
-        $cat = Categoria::create([
+
+        DB::table('categorias')->insert([
             'nombre_categoria' => 'Ropa',
             'estado_categoria' => '1',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
-
-        $cat->create();
-
-
-        
-        $cat1 = Categoria::create([
+        DB::table('categorias')->insert([
             'nombre_categoria' => 'Calzado',
             'estado_categoria' => '1',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
-
-        $cat1->create();
-
-
-        
-        $cat2 = Categoria::create([
+        DB::table('categorias')->insert([
             'nombre_categoria' => 'Celulares',
             'estado_categoria' => '1',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        $cat2->create();
 
     }
 }
