@@ -21,6 +21,8 @@ Para la resolución del problema se usó los siguientes lenguajes:
  npm run dev
  
  php artisan migrate
+
+ php artisan db:seed
  
  php artisan serve
     
