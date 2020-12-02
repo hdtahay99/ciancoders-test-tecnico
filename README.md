@@ -1,5 +1,5 @@
 # TEST TÉCNICO
-Para la resolución del problema se usó los sigueintes lenguajes:
+Para la resolución del problema se usó los siguientes lenguajes:
  * Laravel - PHP (Backend)
  * ReactJS   - JS  (Frontend)
  * MySQL - SQL (Base de datos)
@@ -14,7 +14,7 @@ Para la resolución del problema se usó los sigueintes lenguajes:
 
 ## Proceso de instalación
  ```
- git clone https://github.com/hdtahay99/gekodigital-test.git test-tecnico
+ git clone https://github.com/hdtahay99/ciancoders-test-tecnico.git
  
  npm install
  
