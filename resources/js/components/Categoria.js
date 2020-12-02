@@ -1,10 +1,13 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import CategoriaBody from './CategoriaBody';
 
 const Categoria = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <h2 className="text-center mb-5">Categorías para productos</h2>
+            <CategoriaBody />
+        </>
     )
 }
 

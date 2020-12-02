@@ -18,6 +18,9 @@ require('./components/Catalogo');
 require('./components/CatalogoBoton');
 require('./components/CatalogoCreate');
 require('./components/Categoria');
+require('./components/CategoriaBoton');
+require('./components/CategoriaCreate');
+
 
 
 

@@ -33,5 +33,8 @@ Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update
 
 Route::get('/producto/search', [App\Http\Controllers\CatalogoController::class, 'search'] )->name('buscar.show');
 
-
-Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'getCategorias']);
+Route::get('/categorias', [App\Http\Controllers\CategoriaController::class, 'index']);
+Route::get('/categorias/create', [App\Http\Controllers\CategoriaController::class, 'create']);
+Route::get('/categorias/listar', [App\Http\Controllers\CategoriaController::class, 'getCategorias']);
+Route::put('/categorias/eliminar', [App\Http\Controllers\CategoriaController::class, 'update']);
+Route::post('/categorias/post', [App\Http\Controllers\CategoriaController::class, 'store']);

@@ -1,6 +1,6 @@
 export const getCategorias = async(  ) => {
 
-    const url = '/categorias';
+    const url = '/categorias/listar';
     let data = [];
 
     await axios.get(url).then( resp => {

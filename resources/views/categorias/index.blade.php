@@ -3,7 +3,7 @@
 
 @section('botones')
 
-    <div id="boton_create">
+    <div id="btn_create">
     </div>
 
 @endsection
