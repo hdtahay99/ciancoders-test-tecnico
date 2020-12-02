@@ -108,6 +108,19 @@ class CatalogoController extends Controller
         return ['catalogos' => $catalogos];        
     }
 
+    public function search(Request $request)
+    {
+        $busqueda = $request->get('buscar');
+
+        $productos = Producto::with('catalogo')
+                             ->where('nombre_producto', 'like', '%' . $busqueda . '%')
+                             ->where('estado_producto', '=', '1')                    
+                             ->paginate(10);
+        $productos->appends(['buscar' => $busqueda]);
+
+        return view('inicio.busqueda', compact('productos', 'busqueda'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -129,10 +142,19 @@ class CatalogoController extends Controller
     public function desactivar(Request $request)
     {
         $catalogo = Catalogo::findOrfail($request->id);
-
         $catalogo->estado_catalogo = '0';
-        
         $catalogo->save();
+
+        $productos = Producto::where('id_catalogo', '=', $request->id)
+                            ->get();
+        
+        foreach ($productos as $prod) {
+            $producto = Producto::findOrfail($prod['id']);
+            $producto->estado_producto = '0';
+            $producto->save();
+        }
+
+
     }
 
     /**

@@ -53,10 +53,6 @@ const CatalogoShow = ({codigo, ban}) => {
                                             </p>
 
                                         </div>
-
-                                        <a href="{{ route('recetas.show', ['receta' => $receta->id ])}}"
-                                            className="btn btn-primary d-block btn-receta">Comprar
-                                        </a>
                                     </div>
                                 </div>
                             ))

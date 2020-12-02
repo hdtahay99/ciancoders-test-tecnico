@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    @yield('styles')
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -31,19 +33,24 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categorias">Categoría Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/catalogos">Catálogos Productos</a>
-                    </li>
+                    @if (Auth::check())
 
-                    </ul>
+                        <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/categorias">Categoría Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/catalogos">Catálogos Productos</a>
+                        </li>
+
+                        </ul>
+
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -84,6 +91,7 @@
             </div>
         </nav>
 
+        @yield('hero')
 
 
         <div class="container">
@@ -100,6 +108,8 @@
     </div>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
 
 </body>
 </html>

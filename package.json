@@ -27,6 +27,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "owl.carousel": "^2.3.4",
         "react-router-dom": "^5.2.0",
         "sweetalert2": "^10.10.4"
     }

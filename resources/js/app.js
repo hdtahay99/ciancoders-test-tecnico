@@ -4,6 +4,8 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
+ import 'owl.carousel';
+
 require('./bootstrap');
 
 /**
@@ -15,4 +17,26 @@ require('./bootstrap');
 require('./components/Catalogo');
 require('./components/CatalogoBoton');
 require('./components/CatalogoCreate');
+require('./components/Categoria');
 
+
+
+jQuery(document).ready(function() {
+    jQuery('.owl-carousel').owlCarousel({
+        margin:10,
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0 : {
+                items: 1
+            }, 
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+});

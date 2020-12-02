@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\InicioController::class, 'index'] );
 
 Auth::routes();
 
@@ -26,6 +24,7 @@ Route::get('/catalogos/show', [App\Http\Controllers\CatalogoController::class, '
 Route::post('/catalogos/post', [App\Http\Controllers\CatalogoController::class, 'store']);
 Route::put('/catalogos/eliminar', [App\Http\Controllers\CatalogoController::class, 'desactivar']);
 
+Route::get('/producto/search', [App\Http\Controllers\InicioController::class, 'search'] )->name('buscar.show');
 
 
 
