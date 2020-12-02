@@ -29,7 +29,7 @@ class PerfilPolicy
      */
     public function view(User $user, User $model)
     {
-        //
+
     }
 
     /**
@@ -52,7 +52,7 @@ class PerfilPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        return $user->id === $model->id;
     }
 
     /**
